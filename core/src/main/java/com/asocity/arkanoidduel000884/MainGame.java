@@ -90,6 +90,13 @@ public class MainGame extends Game {
 
     private void loadCoreAssets() {
         // Button sprites (needed by UiFactory in every screen)
+        // UI screen backgrounds
+        manager.load("ui/game_screen.png",      com.badlogic.gdx.graphics.Texture.class);
+        manager.load("ui/menu_screen.png",      com.badlogic.gdx.graphics.Texture.class);
+        manager.load("ui/pause_screen.png",     com.badlogic.gdx.graphics.Texture.class);
+        manager.load("ui/game_over_screen.png", com.badlogic.gdx.graphics.Texture.class);
+
+        // Button sprites (needed by UiFactory in every screen)
         manager.load("ui/buttons/button_rectangle_depth_gradient.png",
                 com.badlogic.gdx.graphics.Texture.class);
         manager.load("ui/buttons/button_rectangle_depth_flat.png",

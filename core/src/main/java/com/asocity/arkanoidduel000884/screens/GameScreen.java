@@ -40,11 +40,21 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class GameScreen implements Screen {
 
-    private static final String BG_GAME    = "backgrounds/game/1.png";
+    private static final String BG_GAME    = "ui/game_screen.png";
     private static final String PADDLE_TEX = "sprites/object/Platform.png";
     private static final String BRICK_TEX  =
         "sprites/tileset/Cartoon_Medieval_Guard_Post_2D_Level_Set_Building-Wall-A-01.png";
-    private static final String LIVES_TEX  = "sprites/ui/lifes.png";
+    private static final String LIVES_TEX  = "sprites/ui/heart.png";
+
+    // Power-up capsule sprites (one per type)
+    private static final String[] CAPSULE_TEX = {
+        "sprites/ui/pu_wide.png",    // WIDE_PADDLE
+        "sprites/ui/pu_slow.png",    // SLOW_BALL
+        "sprites/ui/pu_multi.png",   // MULTI_BALL
+        "sprites/ui/pu_shield.png",  // SHIELD
+        "sprites/ui/pu_laser.png",   // LASER
+        "sprites/ui/pu_fire.png",    // FIREBALL
+    };
 
     private final MainGame      game;
     private final int           levelNumber;
@@ -506,24 +516,15 @@ public class GameScreen implements Screen {
     }
 
     private void renderCapsules() {
-        sr.setProjectionMatrix(viewport.getCamera().combined);
-        sr.begin(ShapeRenderer.ShapeType.Filled);
-        for (PowerUpCapsule c : capsules) {
-            if (!c.active) continue;
-            Color col = powerUpColor(c.type);
-            sr.setColor(col);
-            sr.rect(c.bounds.x, c.bounds.y, c.bounds.width, c.bounds.height);
-        }
-        sr.end();
-
-        // Draw type labels on capsules
         game.batch.begin();
         for (PowerUpCapsule c : capsules) {
             if (!c.active) continue;
-            String letter = powerUpLetter(c.type);
-            game.fontSmall.draw(game.batch, letter,
-                c.bounds.x + c.bounds.width / 2f - 5f,
-                c.bounds.y + c.bounds.height - 2f);
+            int idx = c.type.ordinal();
+            if (idx >= 0 && idx < CAPSULE_TEX.length) {
+                Texture tex = game.manager.get(CAPSULE_TEX[idx], Texture.class);
+                game.batch.draw(tex, c.bounds.x, c.bounds.y,
+                        c.bounds.width, c.bounds.height);
+            }
         }
         game.batch.end();
     }
@@ -599,30 +600,6 @@ public class GameScreen implements Screen {
             case 3: return new Color(p, q, v, 1f);
             case 4: return new Color(t, p, v, 1f);
             default: return new Color(v, p, q, 1f);
-        }
-    }
-
-    private Color powerUpColor(PowerUpType type) {
-        switch (type) {
-            case WIDE_PADDLE: return Color.BLUE;
-            case SLOW_BALL:   return Color.CYAN;
-            case MULTI_BALL:  return Color.YELLOW;
-            case SHIELD:      return Color.GREEN;
-            case LASER:       return Color.RED;
-            case FIREBALL:    return Color.ORANGE;
-            default:          return Color.WHITE;
-        }
-    }
-
-    private String powerUpLetter(PowerUpType type) {
-        switch (type) {
-            case WIDE_PADDLE: return "W";
-            case SLOW_BALL:   return "S";
-            case MULTI_BALL:  return "M";
-            case SHIELD:      return "SH";
-            case LASER:       return "L";
-            case FIREBALL:    return "F";
-            default:          return "?";
         }
     }
 

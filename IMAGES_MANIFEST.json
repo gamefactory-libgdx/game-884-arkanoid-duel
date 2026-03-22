@@ -1,0 +1,11 @@
+{
+  "generated": [
+    "icon_512.png",
+    "ui/menu_screen.png",
+    "ui/game_screen.png",
+    "ui/game_over_screen.png",
+    "ui/pause_screen.png"
+  ],
+  "failed": [],
+  "total_tokens": 11401
+}

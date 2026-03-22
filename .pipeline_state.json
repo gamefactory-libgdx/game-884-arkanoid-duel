@@ -1,0 +1,25 @@
+{
+  "title": "Arkanoid Duel",
+  "archetype": "breakout",
+  "slug": "arkanoid-duel",
+  "description": "Pong paddle on the bottom, brick wall above. Break all bricks with the ball. Power bricks fire projectiles back at your paddle \u2014 dodge by moving. Special bricks drop power-ups when destroyed.",
+  "screens": [
+    "MenuScreen",
+    "GameScreen",
+    "GameOverScreen",
+    "PauseScreen"
+  ],
+  "colors": {
+    "primary": "#FF8800",
+    "secondary": "#111122",
+    "accent": "#00FFFF",
+    "bg": "#08080F"
+  },
+  "font1": "Cairovixel.ttf",
+  "font2": "PressStart2P.ttf",
+  "buttonStyle": "pixel",
+  "gameId": "game-884-arkanoid-duel",
+  "gamePath": "/home/kaliuzhnyi/asocity/projects/game-884-arkanoid-duel",
+  "packageName": "com.asocity.arkanoidduel000884",
+  "orientation": "portrait"
+}

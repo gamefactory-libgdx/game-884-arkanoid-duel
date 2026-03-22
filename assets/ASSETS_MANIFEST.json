@@ -1,0 +1,70 @@
+{
+  "archetype": "breakout",
+  "selection": {
+    "sprites/object": {
+      "pack": "pixelfrog-treasure-palm-island-objects",
+      "source": "itch",
+      "path": "tilesets/side/fantasy/pixelfrog-treasure-palm-island",
+      "type": "object",
+      "theme": [
+        "nature",
+        "fantasy"
+      ],
+      "png_count": 41
+    },
+    "sprites/tileset": {
+      "pack": "free-cartoon-medieval-guard-post-vector-game-tileset",
+      "source": "craftpix",
+      "path": "tilesets/side/fantasy/free-cartoon-medieval-guard-post-vector-game-tileset",
+      "type": "tileset",
+      "theme": [
+        "fantasy"
+      ],
+      "png_count": 120
+    },
+    "sprites/ui": {
+      "pack": "jumper-pack-hud",
+      "source": "kenney",
+      "path": "tilesets/side/platformer/jumper-pack",
+      "type": "ui",
+      "theme": [
+        "platformer"
+      ],
+      "png_count": 5
+    },
+    "backgrounds/menu": {
+      "pack": "craftpix-space-shooter-creation-kit-pixel-art-backgrounds",
+      "source": "craftpix",
+      "path": "enemies/space/craftpix-space-shooter-creation-kit-pixel-art",
+      "type": "background",
+      "theme": [
+        "space",
+        "sci-fi"
+      ],
+      "png_count": 124
+    },
+    "backgrounds/game": {
+      "pack": "forest-and-trees-free-pixel-backgrounds",
+      "source": "craftpix",
+      "path": "tilesets/side/fantasy/forest-and-trees-free-pixel-backgrounds",
+      "type": "background",
+      "theme": [
+        "fantasy",
+        "forest",
+        "nature"
+      ],
+      "png_count": 9
+    }
+  },
+  "buttons": {
+    "color": "Red",
+    "files": [
+      "button_rectangle_depth_gradient.png",
+      "button_rectangle_depth_flat.png",
+      "button_round_depth_gradient.png",
+      "button_round_depth_flat.png",
+      "star.png",
+      "star_outline.png"
+    ]
+  }
+}
